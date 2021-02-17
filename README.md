@@ -1,3 +1,4 @@
-# potential-meme
+# Noah's Code Cafe
 
-An assortment of different labs/projects I've done.
+Grab a cup of Java.
+
