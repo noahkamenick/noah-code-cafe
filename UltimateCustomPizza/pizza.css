@@ -1,0 +1,72 @@
+#heading {
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+
+#centered_container {
+
+    text-align: center;
+    background-color: white;
+
+}
+
+.form-label {
+
+    padding-top: 5px;
+    
+}
+
+#state_col {
+
+    text-align:center;
+    
+    padding-top: 40px;
+
+    
+}
+
+.visible {
+
+    visibility: visible;
+
+}
+
+.invisible {
+
+    visibility: hidden;
+
+}
+
+#createPizzaHeading {
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top:10px;
+
+}
+
+#progressBar {
+
+   
+    width: 33%;
+
+}
+
+.formValidateButtons {
+
+    margin-top: 15px;
+
+
+}
+
+#order_heading {
+
+    text-align: left;
+
+}
+
+#chefCards {
+
+    display: inline-block;
+}

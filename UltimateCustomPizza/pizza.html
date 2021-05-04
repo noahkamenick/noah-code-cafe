@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+      <link rel="stylesheet" href="pizza.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+      <title>CustomPizza</title>
+   </head>
+   <body>
+      <!-- Static Heading -->
+      <div class="container-md header-fix sticky-top" id="centered_container">
+         <!-- Center Heading/Flow -->
+         <h1 id="heading">UltimateCustomPizza</h1>
+         <div class="progress">
+            <div class="progress-bar animate__animated animate__slideInLeft" id="progressBar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">Create</div>
+         </div>
+      </div>
+      <!-- Create Pizza Container -->
+      <div class="container-md animate__animated animate__fadeInLeftBig" id="createPizzaContainer">
+         <!-- Create Pizza Heading -->
+         <h3 id="createPizzaHeading">Create your Pizza</h3>
+         <fieldset id="fieldset">
+            <form action="submitContact.php" class="form-floating" id="form-class" method="post">
+            <!-- Crust Accordion -->
+            <div class="accordion" id="pizzaCreation">
+               <div class="card">
+                  <div class="card-header" id="headingOne">
+                     <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Crust
+                        </button>
+                     </h2>
+                  </div>
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#pizzaCreation">
+                     <div class="card-body">
+                        <!-- Crust Options -->
+                        <h4>Choose your crust | $5</h4>
+                        <div class="form-check">
+                           <input class="form-check-input crustRadioClass" type="checkbox" id="crustRadios1" value="5" name = "items[Thin_Crust]">
+                           <label class="form-check-label" for="crustRadios1">
+                           Thin Crust
+                           </label>
+                        </div>
+                        <div class="form-check">
+                           <input class="form-check-input crustRadioClass" type="checkbox" id="crustRadios2" value="5" name = "items[Thick_Crust]">
+                           <label class="form-check-label" for="crustRadios2">
+                           Thick Crust
+                           </label>
+                        </div>
+                        <div class="form-check">
+                           <input class="form-check-input crustRadioClass" type="checkbox" id="crustRadios3" value="5" name = "items[Deep_Dish]">
+                           <label class="form-check-label" for="crustRadios3">
+                           Deep dish
+                           </label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Sauce Card -->
+               <div class="card">
+                  <div class="card-header" id="headingTwo">
+                     <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Sauce
+                        </button>
+                     </h2>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#pizzaCreation">
+                     <div class="card-body">
+                        <!-- Sauce Options -->
+                        <h4>Choose your sauce | $2</h4>
+                        <div class="form-check">
+                           <input class="form-check-input sauceRadioClass" type="checkbox" id="sauceRadios1" value="2" name = "items[Marinara]">
+                           <label class="form-check-label" for="sauceRadios1">
+                           Marinara
+                           </label>
+                        </div>
+                        <div class="form-check">
+                           <input class="form-check-input sauceRadioClass" type="checkbox" id="sauceRadios2" value="2" name = "items[Ranch]">
+                           <label class="form-check-label" for="sauceRadios2">
+                           Ranch
+                           </label>
+                        </div>
+                        <div class="form-check">
+                           <input class="form-check-input sauceRadioClass" type="checkbox" id="sauceRadios3" value="2" name = "items[Barbeque]">
+                           <label class="form-check-label" for="sauceRadios3">
+                           Barbeque
+                           </label>
+                        </div>
+                        <div class="form-check">
+                           <input class="form-check-input sauceRadioClass" type="checkbox" id="sauceRadios4" value="2" name = "items[Alfredo]">
+                           <label class="form-check-label" for="sauceRadios4">
+                           Alfredo
+                           </label>
+                        </div>
+                        
+                        <!-- One checkbox outside of loop for different value -->
+                        <div class="form-group form-check">
+                           <input class="form-check-input" type="checkbox" id="sauceRadiosNone" value="0" name = "items[No_sauce]">
+                           <label class="form-check-label" for="sauceRadiosNone">None</label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Cheese Card -->
+               <div class="card">
+                  <div class="card-header" id="headingThree">
+                     <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Cheese
+                        </button>
+                     </h2>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#pizzaCreation">
+                     <div class="card-body">
+                        <!-- Cheese Options -->
+                        <h4>Choose your Cheese | $5</h4>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input cheeseCheckClass" id="cheeseCheck1" value="5" name = "items[Mozzerella_Cheese]">
+                           <label class="form-check-label" for="cheeseCheck1">Mozzerella
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input cheeseCheckClass" id="cheeseCheck2" value="5" name = "items[Pepper_Jack]">
+                           <label class="form-check-label" for="cheeseCheck2">Pepper Jack
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input cheeseCheckClass" id="cheeseCheck3" value="5" name = "items[Colby_Cheese]">
+                           <label class="form-check-label" for="cheeseCheck3">Colby
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input cheeseCheckClass" id="cheeseCheck4" value="5" name = "items[Sharp_Cheddar]">
+                           <label class="form-check-label" for="cheeseCheck4">Sharp Cheddar
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input cheeseCheckClass" id="cheeseCheck5" value="5" name = "items[Nacho_Cheese]">
+                           <label class="form-check-label" for="cheeseCheck5">Nacho
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input cheeseCheckClass" id="cheeseCheck6" value="5" name = "items[Bleu_Cheese]">
+                           <label class="form-check-label" for="cheeseCheck6">Bleu Cheese
+                           </label>
+                        </div>
+                    
+                        <!-- One checkbox outside of loop for different value -->
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input" id="cheeseCheckNone" onclick="checkNoneCheese()" value="0" name = "items[No_Cheese]">
+                           <label class="form-check-label" for="cheeseCheckNone">None</label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Protein Card -->
+               <div class="card">
+                  <div class="card-header" id="headingFour">
+                     <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Protein
+                        </button>
+                     </h2>
+                  </div>
+                  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#pizzaCreation">
+                     <div class="card-body">
+                        <h4>Choose your protein | $3 per</h4>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input proteinCheckClass" id="proteinCheck1" value="3" name = "items[Ham]">
+                           <label class="form-check-label" for="proteinCheck1">Ham
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input proteinCheckClass" id="proteinCheck2" value="3" name = "items[Turkey]">
+                           <label class="form-check-label" for="proteinCheck2">Turkey
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input proteinCheckClass" id="proteinCheck3" value="3" name = "items[Chicken]">
+                           <label class="form-check-label" for="proteinCheck3">Chicken
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input proteinCheckClass" id="proteinCheck4" value="3" name = "items[Steak]">
+                           <label class="form-check-label" for="proteinCheck4">Steak
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input proteinCheckClass" id="proteinCheck5" value="3" name = "items[Shrimp]">
+                           <label class="form-check-label" for="proteinCheck5">Shrimp
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input proteinCheckClass" id="proteinCheck6" value="3" name = "items[Vegan]">
+                           <label class="form-check-label" for="proteinCheck6">Vegan
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input proteinCheckClass" id="proteinCheck7" value="3" name = "items[Bacon]">
+                           <label class="form-check-label" for="proteinCheck7">Bacon
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input proteinCheckClass" id="proteinCheck8" value="3" name = "items[Brisket]">
+                           <label class="form-check-label" for="proteinCheck8">Brisket
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input proteinCheckClass" id="proteinCheck9" value="3" name = "items[Pepperoni]">
+                           <label class="form-check-label" for="proteinCheck9">Pepperoni
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input proteinCheckClass" id="proteinCheck10" value="3" name = "items[Sausage]">
+                           <label class="form-check-label" for="proteinCheck10">Sausage</label>
+                        </div>
+                        <!-- One checkbox outside of loop for different value -->
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input" id="proteinCheckNone" value="0" onclick="checkNoneProtein()" name = "items[No_Protein]">
+                           <label class="form-check-label" for="proteinCheckNone">None</label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Veggies Card -->
+               <div class="card">
+                  <div class="card-header" id="headingFive">
+                     <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Veggies
+                        </button>
+                     </h2>
+                  </div>
+                  <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#pizzaCreation">
+                     <div class="card-body">
+                        <h4>Choose your Veggies | $4 per</h4>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input veggieCheckClass" id="veggieCheck1" value="4" name = "items[Green_Peppers]">
+                           <label class="form-check-label" for="veggieCheck1">Green Peppers
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input veggieCheckClass" id="veggieCheck2" value="4" name = "items[Spinach]">
+                           <label class="form-check-label" for="veggieCheck2">Spinach
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input veggieCheckClass" id="veggieCheck3" value="4" name = "items[Mushrooms]">
+                           <label class="form-check-label" for="veggieCheck3">Mushrooms
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input veggieCheckClass" id="veggieCheck4" value="4" name = "items[Red_Peppers]">
+                           <label class="form-check-label" for="veggieCheck4">Red Peppers
+                           </label>
+                        </div>
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input veggieCheckClass" id="veggieCheck5" value="4" name = "items[Jalapeno_Peppers]">
+                           <label class="form-check-label" for="veggieCheck5">Jalapeno Peppers</label>
+                        </div>
+                        <!-- One checkbox outside of loop for different value -->
+                        <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input" id="veggieCheckNone" onclick="checkNoneVeggie()" value="0" name = "items[No_Veggies]">
+                           <label class="form-check-label" for="veggieCheckNone">None</label>
+                        </div>
+                        <button type="button" class="btn btn-success" onclick="validate()">Next</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </fieldset>
+      </div>
+      <!-- Form Container -->
+      <div class="container-md animate__animated animate__fadeInRightBig d-none" id="formContainer">
+         
+            <div class="col-md-6">
+               <label for="firstName" class="form-label">First Name</label>
+               <input type="text" class="form-control formField" id="firstName" name="fName" onchange="validateContact()">
+            </div>
+            <div class="col-md-6">
+               <label for="lastName" class="form-label">Last Name</label>
+               <input type="text" class="form-control formField" id="lastName" name="lName" onchange="validateContact()">
+            </div>
+            <div class="col-12">
+               <label for="inputAddress" class="form-label">Address</label>
+               <input type="text" class="form-control formField" id="inputAddress" name="addOne" onchange="validateContact()">
+            </div>
+            <div class="col-12">
+               <label for="inputAddress2" class="form-label">Address 2</label>
+               <input type="text" class="form-control formField" id="inputAddress2" name="addTwo" onchange="validateContact()">
+            </div>
+            <div class="col-md-6">
+               <label for="inputCity" class="form-label">City</label>
+               <input type="text" class="form-control formField" id="inputCity" name="city" onchange="validateContact()">
+            </div>
+            <div class="col-md-4 align-self-center" id="state_col">
+               <label for="inputState" class="form-label" id="stateLabel">State</label>
+               <select id="inputState" class="form-select" name="state">
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                  <option value="DC">District of Columbia</option>
+                  <option value="PR">Puerto Rico</option>
+                  <option value="GU">Guam</option>
+               </select>
+               <div class="invalid-feedback">Please Select a State</div>
+            </div>
+            <div class="col-md-2">
+               <label for="inputZip" class="form-label">Zip</label>
+               <input type="text" class="form-control formField" id="inputZip" name="zip" onchange="validateContact()">
+            </div>
+            <div class="col-12">
+               <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="eatCheck" onchange="validateContact()">
+                  <label class="form-check-label" for="eatCheck" id="eatLabel">
+                  I agree to eat this pizza
+                  </label>
+               </div>
+            </div>
+            <div class="col-12">
+               <button id="checkoutbutton" class="btn btn-primary formValidateButtons" onclick="validateContact()" type="button">Check out</button>
+               <button type="button" id="backbutton" onclick="backToCreate()" class="btn btn-secondary formValidateButtons">Go Back</button>
+            </div>
+         </form>
+      </div>
+      <script>
+         var numLinesInStates = "53"; //
+         var numLinesCrust = "3"; //
+         var numLinesSauce = "6"; ////////// Copy variables initialized and incremented by PHP to JS
+         var numLinesProtein = "10"; //
+         var numLinesVeggies = "5"; //
+         var numLinesCheese = "7"; //
+      </script>
+      <script src="pizza.js"></script>
+   </body>
+</html>

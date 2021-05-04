@@ -1,0 +1,10 @@
+1-Ham
+2-Turkey
+3-Chicken
+4-Steak
+5-Shrimp
+6-Vegan
+7-Bacon
+8-Brisket
+9-Pepperoni
+10-Sausage
