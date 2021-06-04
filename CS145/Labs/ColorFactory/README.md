@@ -1,4 +1,4 @@
-#Color Factory
+# Color Factory
 
 GUI App built on the JavaFX framework
 
