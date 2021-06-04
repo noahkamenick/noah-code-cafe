@@ -2,6 +2,8 @@ package cs145.lab7;
 
 import java.util.Scanner;
 
+//!!!!! Don't Put In Actual Social Security Number !!!!!!!
+
 public class SocSecProcessor {
 
 	public static void main(String[] args) {
